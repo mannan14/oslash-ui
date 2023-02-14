@@ -5,19 +5,31 @@ export interface Props {
 
 const { title } = Astro.props;
 
-import Navigation from '../components/Navigation.jsx'
-import LeftNavigation from '../components/LeftNavigation'
-import LeftPanel from '../components/LeftPanel'
-import MainPage from '../components/MainPage'
+import Navigation from '../../components/navigation';
+import LeftNavigation from '../../components/LeftNavigation';
+import LeftPanel from '../../components/LeftPanel';
+import MainPage from '../../components/MainPage';
 
-const snippets =
+
+export function getStaticPaths(){
+	const snippets =
         [
             {folders:'Salman', foldername:`Salman's Folder`, subfolder:['o/intro']},
             {folders:'untitle', foldername:'Untitled Folder', subfolder:['o/intro']},
             {folders:'pro', foldername:'o/pro', subfolder:[]},
         ]
+	return snippets.map( ({folders, foldername}) => {
+		return{
+			params: {folders},
+			props: {folderValue: foldername}
+		}
+	})
+}
 
+
+const {folders} = Astro.params
 const {folderValue, subfolder} = Astro.props
+
 ---
 
 <!DOCTYPE html>
@@ -27,7 +39,7 @@ const {folderValue, subfolder} = Astro.props
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{folders}</title>
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 			@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
@@ -42,7 +54,6 @@ const {folderValue, subfolder} = Astro.props
 		<!-- <RightPage client:load/>
 			<FolderName client:load/>
 			<PersonalFolder client:load/> -->
-		<MainPage folderValue={snippets[0].foldername} client:load/>
-		<!-- <MainPage folderValue={folderValue} client:load/> -->
+		<MainPage folderValue={folderValue} name={folders} client:load/>
 	</body>
 </html>

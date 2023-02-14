@@ -1,19 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-
-import Navigation from '../components/navigation.jsx';
-import LeftNavigation from '../components/leftNavigation';
-import LeftPanel from '../components/leftPanel';
-import MainPage from '../components/mainPage';
+const pageTitle = 'OSlash'
 ---
 
-<Layout title="OSlash">
-	<Navigation  client:load/>
-	<LeftNavigation client:load />
-	<LeftPanel client:load />
-	<!-- <RightPage client:load/>
-	<FolderName client:load/>
-	<PersonalFolder client:load/> -->
-	<MainPage client:load/>
+<Layout title={pageTitle}>
+	
 </Layout>

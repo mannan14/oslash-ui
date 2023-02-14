@@ -2,7 +2,7 @@ import React from "react";
 import NavIcon from "./NavIcon";
 
 const userInfo = {
-    username:'mannan',
+    username:'salman',
 }
 
 export default function Navigation(){

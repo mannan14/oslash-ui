@@ -9,7 +9,6 @@ const navValues = [
 ]
 
 const NavIcon = (Info) => {
-    console.log(Info)
     return (
         <Menu>
             <Menu.Button>
@@ -20,9 +19,8 @@ const NavIcon = (Info) => {
                     {
                         navValues.map((value) => 
                             (
-                                <Menu.Item>
+                                <Menu.Item key={value.href}> 
                                     <button
-                                    key={value.href}
                                     className={` text-[#111827] hover:bg-[#F9FAFB] rounded text-base text-left p-2 leading-5`}
                                     href="#"
                                     >
@@ -33,19 +31,6 @@ const NavIcon = (Info) => {
                         )
                     }
                     </div>
-                    
-                    {/* {navValues.map((val) => (
-                        <Menu.Item>
-                            {({ active }) => (
-                            <a
-                                href={val.href}
-                                className={`${active && 'bg-[#DBEAFE]'} text-[#111827] rounded text-base p-2 leading-5`}
-                            >
-                                {val.label}
-                            </a>
-                            )}
-                        </Menu.Item>
-                    ))} */}
             </Menu.Items>
         </Menu>
     )
