@@ -49,7 +49,7 @@ const {folderValue, subfolder} = Astro.props
 	<body class="font-inter overflow-clip">
 		<Navigation  client:load/>
 		<LeftNavigation client:load />
-		<LeftPanel client:load />
+		<LeftPanel folderValue={folderValue} client:load />
 		
 		<!-- <RightPage client:load/>
 			<FolderName client:load/>

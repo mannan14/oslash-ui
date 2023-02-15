@@ -4,7 +4,7 @@ import '../styles/base.css'
 import { Disclosure } from "@headlessui/react";
 
 
-export default function leftPanel(){
+export default function leftPanel({folderValue}){
     const snippets =
         [
             {folders:'Salman', foldername:`Salman's Folder`, subfolder:[null]},
@@ -20,10 +20,12 @@ export default function leftPanel(){
             </button>
             {
                 snippets.map((values)=>(
-                    <Disclosure>
+                    <Disclosure key={values.folders} >
                     {({open})=>(
                         <>
-                        <div className={`flex flex-row h-10 px-2 mt-2 w-[232px] items-center rounded-lg hover:cursor-pointer`}>   
+                        <div className={`${
+                            folderValue === values.foldername ? ' bg-[#DBEAFE]' : ''
+                        } flex flex-row h-10 px-2 mt-2 w-[232px] items-center rounded-lg hover:cursor-pointer hover:bg-[#DBEAFE]`}>   
                             <Disclosure.Button>
                                 <svg 
                                 className={`${
@@ -34,7 +36,7 @@ export default function leftPanel(){
                                 </svg>
                             </Disclosure.Button>
                             
-                                <a href={`/folders/${values.folders}`} key={values.href} className="flex">
+                                <a href={`/folders/${values.folders}`}className="flex">
                                     <svg className=" w-5 h-5 ml-1 text-[#111827]" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2 6C2 5.46957 2.21071 4.96086 2.58579 4.58579C2.96086 4.21071 3.46957 4 4 4H9L11 6H16C16.5304 6 17.0391 6.21071 17.4142 6.58579C17.7893 6.96086 18 7.46957 18 8V14C18 14.5304 17.7893 15.0391 17.4142 15.4142C17.0391 15.7893 16.5304 16 16 16H4C3.46957 16 2.96086 15.7893 2.58579 15.4142C2.21071 15.0391 2 14.5304 2 14V6Z" fill="currentColor"/>
                                     </svg>
