@@ -5,7 +5,7 @@ export interface Props {
 
 const { title } = Astro.props;
 
-import Navigation from '../components/Navigation.jsx'
+import Navigation from '../components/navigation.jsx'
 import LeftNavigation from '../components/LeftNavigation'
 import LeftPanel from '../components/LeftPanel'
 import MainPage from '../components/MainPage'
@@ -16,8 +16,7 @@ const snippets =
             {folders:'untitle', foldername:'Untitled Folder', subfolder:['o/intro']},
             {folders:'pro', foldername:'o/pro', subfolder:[]},
         ]
-
-const {folderValue, subfolder} = Astro.props
+		
 ---
 
 <!DOCTYPE html>
@@ -42,7 +41,7 @@ const {folderValue, subfolder} = Astro.props
 		<!-- <RightPage client:load/>
 			<FolderName client:load/>
 			<PersonalFolder client:load/> -->
-		<MainPage folderValue={snippets[0].foldername} client:load/>
+		<MainPage folderValue={snippets[0].foldername} name={snippets[0].folders} client:load/>
 		<!-- <MainPage folderValue={folderValue} client:load/> -->
 	</body>
 </html>

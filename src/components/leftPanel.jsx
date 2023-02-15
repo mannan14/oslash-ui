@@ -23,7 +23,7 @@ export default function leftPanel(){
                     <Disclosure>
                     {({open})=>(
                         <>
-                        <div className={`flex flex-row h-10 px-2 mt-2 w-[232px] items-center rounded-lg hover:cursor-pointer hover:bg-[#DBEAFE]`}>   
+                        <div className={`flex flex-row h-10 px-2 mt-2 w-[232px] items-center rounded-lg hover:cursor-pointer`}>   
                             <Disclosure.Button>
                                 <svg 
                                 className={`${
