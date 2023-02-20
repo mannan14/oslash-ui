@@ -1,9 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import LeftPanel from '../components/LeftPanel';
+import MainPage from '../components/MainPage';
+import { snippet } from '../scripts/snippets';
 const pageTitle = 'OSlash'
 ---
 
 <Layout title={pageTitle}>
-	
+    <LeftPanel folderValue={snippet[0].foldername} client:load />
+    <!-- <RightPage client:load/>
+    <FolderName client:load/>
+    <PersonalFolder client:load/> -->
+    <MainPage folderValue={snippet[0].foldername} user={snippet[0].folders} client:load/>
 </Layout>

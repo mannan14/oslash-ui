@@ -5,18 +5,9 @@ export interface Props {
 
 const { title } = Astro.props;
 
-import Navigation from '../components/navigation.jsx'
+import '../../public/style/index.css'
+import Navigation from '../components/Navigation.jsx'
 import LeftNavigation from '../components/LeftNavigation'
-import LeftPanel from '../components/LeftPanel'
-import MainPage from '../components/MainPage'
-
-const snippets =
-        [
-            {folders:'Salman', foldername:`Salman's Folder`, subfolder:['o/intro']},
-            {folders:'untitle', foldername:'Untitled Folder', subfolder:['o/intro']},
-            {folders:'pro', foldername:'o/pro', subfolder:[]},
-        ]
-		
 ---
 
 <!DOCTYPE html>
@@ -27,21 +18,16 @@ const snippets =
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-			@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
-			@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-		</style>
 	</head>
-	<body class="font-inter overflow-clip">
-		<Navigation  client:load/>
-		<LeftNavigation client:load />
-		<LeftPanel client:load />
-		
-		<!-- <RightPage client:load/>
-			<FolderName client:load/>
-			<PersonalFolder client:load/> -->
-		<MainPage folderValue={snippets[0].foldername} name={snippets[0].folders} client:load/>
-		<!-- <MainPage folderValue={folderValue} client:load/> -->
+	<body class="overflow-hidden">
+		<div>
+			<LeftNavigation  client:load/>
+			<div>
+				<Navigation client:load />
+				<div>
+					<slot/>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

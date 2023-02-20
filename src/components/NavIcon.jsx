@@ -8,11 +8,11 @@ const navValues = [
     {href:'/Logout', label:'Logout'}, 
 ]
 
-const NavIcon = (Info) => {
+export default function NavIcon({userlogo}){
     return (
         <Menu>
             <Menu.Button>
-                <img src={Info.userlogo} className="w-[32px] h-[32px] bg-white hover:cursor-pointer" alt="" />
+                <img src={userlogo} className="w-[32px] h-[32px] bg-white hover:cursor-pointer" alt="" />
             </Menu.Button>
             <Menu.Items className="absolute right-4 top-12 z-10 w-[162px] h-[132px] rounded-lg p-2 bg-white shadow-md">
                 <div className="flex flex-col">
@@ -36,5 +36,3 @@ const NavIcon = (Info) => {
     )
     
 }
-
-export default NavIcon;

@@ -4,17 +4,19 @@ import FolderName from './FolderName'
 import PersonalFolder from './PersonalFolder'
 
 
-export default function mainPage({folderValue, name}){
+export default function MainPage({folderValue, user}){
     return(
-        <div className="absolute flex flex-row right-0 left-[304px] ">
+        <div className="absolute flex flex-row right-0 top-12 left-[304px] ">
             <div className="flex flex-col w-4/5">
-                <FolderName Foldername={folderValue} />
-                <PersonalFolder Folderaname={folderValue} name={name} />
+                <FolderName user={user} Foldername={folderValue} />
+                <PersonalFolder user={user} FolderValue={folderValue} />
             </div>
-            <RightNavigation name={name}/>
+            <RightNavigation name={user}/>
         </div>
     )
 }
+
+
 //folder name => folder_name, add_shortcut
 //main page foldername.jsx should change
 //rightNavigation add an extra user

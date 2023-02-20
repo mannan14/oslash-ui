@@ -1,0 +1,28 @@
+---
+import LeftPanel from '../../../components/LeftPanel';
+import MainPage from '../../../components/MainPage';
+import Layout from '../../../layouts/Layout.astro';
+import { snippet } from '../../../scripts/snippets';
+
+
+export function getStaticPaths(){
+	return snippet.map( ({folders, foldername}) => {
+		return{
+			params: {folders},
+			props: {folderValue: foldername}
+		}
+	})
+}
+
+
+const {folders} = Astro.params
+const {folderValue} = Astro.props
+
+---
+<Layout title={folders}>
+	<LeftPanel folderValue={folderValue} client:load />
+	<!-- <RightPage client:load/>
+	<FolderName client:load/>
+	<PersonalFolder client:load/> -->
+	<MainPage folderValue={folderValue} user={folders} client:load/>
+</Layout>
