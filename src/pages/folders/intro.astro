@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LeftPanel from '../../components/LeftPanel';
+import MainPage from '../../components/MainPage';
+import { snippet } from '../../scripts/snippets';
+
+const pageTitle = 'intro'
+---
+
+<Layout title={pageTitle}>
+    <LeftPanel folderValue={'intro'} client:load />
+    <!-- <RightPage client:load/>
+    <FolderName client:load/>
+    <PersonalFolder client:load/> -->
+    <MainPage folderValue={'intro'} user={'intro'} client:load/>
+</Layout>

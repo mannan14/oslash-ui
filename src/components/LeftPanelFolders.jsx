@@ -40,12 +40,14 @@ export default function LeftPanelFolders({folderValue}){
                         </div>
 
                         <Disclosure.Panel>
-                            <button className=" w-[232px] h-10 text-base text-left text-[#111827] rounded-lg hover:bg-[#DBEAFE]">
-                                <span className="flex flex-row py-2 pl-14">
-                                    {values.subfolder.map((val)=>{
-                                    return val
-                                    })}
-                                </span> 
+                            <button 
+                                className=" w-[232px] h-10 my-1 text-base text-left text-[#111827] rounded-lg hover:bg-[#DBEAFE]">
+                                {
+                                    values.subfolder.map((val) =>
+                                    (<a key={val.folders} href={`/folders/intro`} className="flex flex-row py-2 pl-14">
+                                        {val.foldername}
+                                    </a> )
+                                )}
                             </button>
                         </Disclosure.Panel>
                         </>

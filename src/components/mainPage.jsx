@@ -3,6 +3,7 @@ import RightNavigation from './RightNavigation'
 import FolderName from './FolderName'
 import PersonalFolder from './PersonalFolder'
 
+import IntroRightNavigation from "./IntroRightNavigation"
 
 export default function MainPage({folderValue, user}){
     return(
@@ -11,7 +12,13 @@ export default function MainPage({folderValue, user}){
                 <FolderName user={user} Foldername={folderValue} />
                 <PersonalFolder user={user} FolderValue={folderValue} />
             </div>
-            <RightNavigation name={user}/>
+            {
+                (user === 'intro') 
+                ?
+                <IntroRightNavigation name={user}/>
+                :
+                <RightNavigation name={user}/>
+            }
         </div>
     )
 }

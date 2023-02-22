@@ -6,14 +6,13 @@ import { snippet } from '../../../scripts/snippets';
 
 
 export function getStaticPaths(){
-	return snippet.map( ({folders, foldername}) => {
+	return snippet.map( ({folders, foldername, subfolder}) => {
 		return{
 			params: {folders},
 			props: {folderValue: foldername}
 		}
 	})
 }
-
 
 const {folders} = Astro.params
 const {folderValue} = Astro.props

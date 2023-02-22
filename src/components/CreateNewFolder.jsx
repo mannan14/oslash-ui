@@ -7,18 +7,32 @@ import Tippy from "@tippyjs/react";
 export default function CreateNewFolder(){
     let [isOpen, setIsOpen] = useState(false)
     let completeButtonRef = useRef(null)
+    
+    let [foldername, setFoldername] = useState('')
+    let [shortcutname, setShortcutname] = useState('')
+    let [disabled, setDisabled] = useState(true)
 
+    let tooltip_foldername = false
+    let tooltip_shortcutname =false
+    
     function closeModal(){
         setIsOpen(false)
     }
-
+    
     function openModal(){
         setIsOpen(true)
     }
-
+    
     function onCreateFolder(){
-
-        closeModal()
+        if (foldername == '' || shortcutname == ''){
+            setDisabled(true)
+        }
+        else {
+            setDisabled(false)
+            setFoldername('')
+            setShortcutname('')
+            closeModal()
+        }
     }
     return (
         <>
@@ -70,42 +84,76 @@ export default function CreateNewFolder(){
                             </div>
 
                             <div className=" space-y-4 pt-4 px-4">
-
-                                <div className="flex flex-row w-[84px] h-9 border rounded-lg">
-                                    <div className="flex flex-row w-full rounded-lg focus-within:border focus-within:border-[#6366F1]">
-                                        <span className="flex rounded-l-lg text-[#6B7280] items-center justify-center w-9 bg-[#F3F4F6]">o/</span>
-                                        <Tippy
-                                            content="Prefix already exist"
-                                            arrow='<svg xmlns="http://www.w3.org/2000/svg" class="absolute -left-[53px] -top-3 h-5 w-5 text-[#EF4444]" viewBox="0 0 320 512" fill="currentColor">
-                                            <path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/>
-                                            </svg>'
-                                            className="relative left-4 -top-2 flex flex-row z-50 bg-[#EF4444] text-white rounded-sm text-xs px-2 py-[2px]"
-                                            placement="bottom"
-                                            trigger="click"
-                                            // visible={false}
-                                        >
-                                            <input id="shortcut_name" className="rounded-r-lg w-14 text-sm font-normal text-center items-center justify-center overflow-hidden whitespace-nowrap text-ellipsis active:outline-none focus:outline-none" type="text" placeholder="prefix" />                       
-                                        </Tippy>
-                                    </div>
+                                <div 
+                                className = {tooltip_shortcutname ? 'flex flex-row w-[84px] h-9 border rounded-lg focus-within:border focus-within:border-[#EF4444]'
+                                : 'flex flex-row w-[84px] h-9 border rounded-lg focus-within:border focus-within:border-[#6366F1]'
+                                }>
+                                    <span className="flex rounded-l-lg text-[#6B7280] items-center justify-center w-9 bg-[#F3F4F6]">o/</span>
+                                    
+                                    <Tippy
+                                        // content="Prefix already exist"
+                                        content={
+                                            snippet.map((value) => {
+                                                if(value.folders === shortcutname){
+                                                    tooltip_shortcutname = true 
+                                                    return `Prefix already exist`
+                                                }
+                                                else{
+                                                    tooltip_shortcutname = false
+                                                }
+                                            })
+                                        }
+                                        arrow={tooltip_shortcutname && `<svg xmlns="http://www.w3.org/2000/svg" class="absolute -left-[53px] -top-3 h-5 w-5 text-[#EF4444]" viewBox="0 0 320 512" fill="currentColor">
+                                        <path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/>
+                                        </svg>`}
+                                        className="relative left-4 -top-2 flex flex-row z-50 bg-[#EF4444] text-white rounded-sm text-xs px-2 py-[2px]"
+                                        placement="bottom"
+                                        visible={tooltip_shortcutname}
+                                    >
+                                        <input 
+                                        value={shortcutname} 
+                                        className={`rounded-r-lg w-14 text-sm font-normal text-center items-center justify-center overflow-hidden whitespace-nowrap text-ellipsis active:outline-none focus:outline-none`} type="text" placeholder="prefix" 
+                                        onChange={ (e) => setShortcutname(e.target.value)}
+                                        />                       
+                                    
+                                    </Tippy>
                                 </div>
                                     <Tippy
-                                        content="Folder name already exist"
-                                        arrow='<svg xmlns="http://www.w3.org/2000/svg" class="absolute -left-[73px] -top-7 h-5 w-5 text-[#EF4444]" viewBox="0 0 320 512" fill="currentColor">
+                                        // content="Folder name already exist"
+                                        content={
+                                            snippet.map((value) => {
+                                                if(value.foldername === foldername){
+                                                    tooltip_foldername = true 
+                                                    return `Folder name already exist`
+                                                }
+                                                else{
+                                                    tooltip_foldername = false
+                                                }
+                                            })
+                                        }
+                                        arrow={tooltip_foldername && `<svg xmlns="http://www.w3.org/2000/svg" class="absolute -left-[70px] -top-7 h-5 w-5 text-[#EF4444]" viewBox="0 0 320 512" fill="currentColor">
                                         <path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/>
-                                        </svg>'
-                                        className="relative -left-4 -top-2 bg-[#EF4444] text-white rounded-sm text-xs px-2 py-[2px]"
+                                        </svg>`}
+                                        className={`relative -left-5 -top-2 bg-[#EF4444] text-white rounded-sm text-xs px-2 py-[2px]`}
                                         placement="bottom"
-                                        trigger="click"
-                                        // visible={false}
+                                        visible={tooltip_foldername}
                                     >
-                                        <input id="folder_name" className=" rounded-lg p-2 border border-[#D1D5DB] text-sm font-normal placeholder:text-[#9CA3AF] focus:outline-none focus:border focus:border-[#6366F1] " type="text" placeholder="Folder name" />
+                                        <input
+                                        value={foldername}
+                                        className= {tooltip_foldername ? 'rounded-lg p-2 border border-[#D1D5DB] text-sm font-normal placeholder:text-[#9CA3AF] focus:outline-none focus:border focus:border-[#EF4444]'
+                                        : 'rounded-lg p-2 border border-[#D1D5DB] text-sm font-normal placeholder:text-[#9CA3AF] focus:outline-none focus:border focus:border-[#6366F1]'}
+                                        type="text" 
+                                        placeholder="Folder name" 
+                                        onChange={(e)=> setFoldername(e.target.value)}/>
+
                                     </Tippy>
                                     
                                 <h5 className=" text-xs text-[#6B7280]">Note:</h5>
 
                                 <div className="flex justify-end w-full">
                                     <button
-                                    className="mb-2 rounded-md border border-transparent bg-black text-white px-4 py-2 text-sm font-medium focus:outline-none"
+                                    disabled={tooltip_foldername&&disabled&&tooltip_shortcutname}
+                                    className="mb-2 rounded-md border border-transparent bg-black text-white px-4 py-2 text-sm font-medium focus:outline-none disabled:bg-slate-800"
                                     onClick={onCreateFolder}
                                     >
                                         Save

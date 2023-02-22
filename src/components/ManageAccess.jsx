@@ -23,10 +23,16 @@ return (
                 </>
             )
             :
+            (name != 'intro') ?
             (   
                 <>    
                     <OwnerDropdown users={users}/>
                     <DefaultManageAccess users={users} />
+                </>
+            )
+            :
+            (
+                <>
                 </>
             )
         }
