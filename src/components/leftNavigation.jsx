@@ -6,7 +6,7 @@ import logo from '../assets/logo.png'
 export default function LeftNavigation(){
     return(
         <>
-        <div className="w-14 h-screen absolute top-0 z-10 bg-[#F9FAFB] flex flex-col justify-between">
+        <div className="w-14 h-screen absolute z-10 bg-[#F9FAFB] flex flex-col justify-between">
             <div className="flex flex-col list-none">
                 
                 <img src={logo} className="w-14 h-12" alt=""/>
