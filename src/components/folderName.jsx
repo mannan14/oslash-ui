@@ -1,10 +1,11 @@
 import React from "react";
 import menu from '../assets/menu.svg'
 import { snippet } from "../scripts/snippets";
+import Tippy from "@tippyjs/react"; 
 
 export default function FolderName({Foldername}){
     return (
-        <div className="bg-[#F9FAFB] top-0 flex justify-between">
+        <div className="bg-[#F9FAFB] flex justify-between">
             <div className="p-6 flex">
                 {
                     (Foldername === snippet[0].foldername) ? (     
@@ -17,10 +18,18 @@ export default function FolderName({Foldername}){
                     <div className="flex justify-between">  
                         <div className="flex flex-col">
                             <span className="flex">
+
                                 <h2 className=" font-normal text-xs text-[#374151]">Folder Shortcut</h2>
-                                <svg className="w-4 h-4 ml-1 text-[#6B7280]" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.5 8.5H6.5V5.5H5.5V8.5ZM6 1C3.24 1 1 3.24 1 6C1 8.76 3.24 11 6 11C8.76 11 11 8.76 11 6C11 3.24 8.76 1 6 1ZM6 10C3.795 10 2 8.205 2 6C2 3.795 3.795 2 6 2C8.205 2 10 3.795 10 6C10 8.205 8.205 10 6 10ZM5.5 4.5H6.5V3.5H5.5V4.5Z" fill="currentColor"/>
-                                </svg>
+                                <Tippy
+                                    content="Add common prefix to group snippets eg: o/sal"
+                                    className="relative -top-2 z-50 w-48 text-left text-xs text-gray-100 bg-gray-600 rounded-[4px] px-2 py-[2px]"
+                                    placement="bottom-start"
+                                >                      
+                                    <svg className="w-4 h-4 ml-1 text-[#6B7280]" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 8.5H6.5V5.5H5.5V8.5ZM6 1C3.24 1 1 3.24 1 6C1 8.76 3.24 11 6 11C8.76 11 11 8.76 11 6C11 3.24 8.76 1 6 1ZM6 10C3.795 10 2 8.205 2 6C2 3.795 3.795 2 6 2C8.205 2 10 3.795 10 6C10 8.205 8.205 10 6 10ZM5.5 4.5H6.5V3.5H5.5V4.5Z" fill="currentColor"/>
+                                    </svg>
+                                </Tippy>
+
                             </span>
                             <span className="flex ">
                                 <svg className="w-6 h-6 text-[#6366F1]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -39,4 +48,14 @@ export default function FolderName({Foldername}){
                 <img className="p-6" src={menu} alt="" />
         </div>
     )
+{/* 
+<Tippy
+    content="Prefix already exist"
+    content=
+    arrow={}
+    className="relative left-4 -top-2 flex flex-row z-50 bg-[#EF4444] text-white rounded-sm text-xs px-2 py-[2px]"
+    placement="bottom"
+>                      
+
+</Tippy> */}
 }

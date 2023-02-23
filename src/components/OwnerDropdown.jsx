@@ -27,18 +27,22 @@ export default function OwnerDropdown({users}){
                                 </svg>
                             </span>
                         </Menu.Button>
-                        <Menu.Items className="absolute top-32 right-4 z-10 w-[162px] h-[132px] rounded-lg p-2 bg-white shadow-md">
+                        <Menu.Items className="absolute top-32 right-4 z-10 w-40 h-30 rounded-lg p-2 bg-white shadow-md focus:outline-none">
                             <div className="flex flex-col">
                                 {
                                     navValues.map((value) => 
                                         (
                                             <Menu.Item key={value.href}> 
-                                                <button
-                                                className={` text-[#111827] hover:bg-[#F9FAFB] rounded text-base text-left p-2 leading-5`}
-                                                href="#"
-                                                >
-                                                {value.label}
-                                                </button>
+                                            {
+                                                ({active}) => (
+                                                    <button
+                                                    className={`${active ? `bg-gray-100 ` : ``} text-[#111827] hover:bg-gray-100 active:bg-blue-100 focus:bg-blue-100 rounded text-base text-left p-2 leading-5`}
+                                                    href="#"
+                                                    >
+                                                        {value.label}
+                                                    </button>
+                                                )
+                                            }
                                             </Menu.Item>
                                         )
                                     )

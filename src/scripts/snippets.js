@@ -20,7 +20,8 @@ export const snippet =
     {
         folders:'personal', 
         foldername:'personal', 
-        subfolder:[]},
+        subfolder:[]
+    },
     {
         folders:'pro', 
         foldername:'o/pro', 

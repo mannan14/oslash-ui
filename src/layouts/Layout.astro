@@ -5,7 +5,7 @@ export interface Props {
 
 const { title } = Astro.props;
 
-import '../../public/style/index.css'
+import '/public/style/index.css'
 import Navigation from '../components/Navigation.jsx'
 import LeftNavigation from '../components/LeftNavigation'
 ---
@@ -20,11 +20,11 @@ import LeftNavigation from '../components/LeftNavigation'
 		<title>{title}</title>
 	</head>
 	<body class="overflow-hidden">
-		<div>
+		<div class="">
 			<LeftNavigation  client:load/>
-			<div>
+			<div class="">
 				<Navigation client:load />
-				<div>
+				<div class="">
 					<slot/>
 				</div>
 			</div>

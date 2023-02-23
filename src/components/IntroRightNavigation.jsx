@@ -29,8 +29,7 @@ export default function IntroRightNavigation({name}){
                                             'text-[#111827] shadow-[inset_0px_-1px_0px_#4F46E5]'
                                             :
                                             'text-[#6B7280]'
-                                        )}
-                                        >
+                                        )}>
                                         Insights
                                     </Tab>
                                     <Tab 

@@ -46,4 +46,14 @@ export const versionCheck = [
         version_date: 'Sun, 4 Dec',
         checked: false,
     },
+    {
+        version_name: 'v1',
+        version_date: 'Sun, 4 Dec',
+        checked: false,
+    },
+    {
+        version_name: 'v0',
+        version_date: 'Sun, 4 Dec',
+        checked: false,
+    },
 ]

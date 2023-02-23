@@ -4,7 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { snippet } from '../scripts/snippets'
 import Tippy from "@tippyjs/react"; 
 
-export default function CreateNewFolder(){
+export default function CreateNewFolder({className, textColor}){
     let [isOpen, setIsOpen] = useState(false)
     let completeButtonRef = useRef(null)
     
@@ -36,9 +36,9 @@ export default function CreateNewFolder(){
     }
     return (
         <>
-            <button onClick={openModal} className="bg-[#4F46E5] hover:bg-[#4e46e5eb] mt-2 w-[232px] h-10 p-2 flex items-center rounded-lg">
-                <span className="text-white font-medium px-2">+</span>
-                <span className=" text-white font-medium text-center">Create New</span>
+            <button onClick={openModal} className={className} >
+                <span className={`${textColor} font-medium px-2`}>+</span>
+                <span className={`${textColor} font-medium text-center`}>Create New</span>
             </button>
             
             <Transition appear show={isOpen}>
@@ -56,7 +56,7 @@ export default function CreateNewFolder(){
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                     >
-                        <div className="fixed inset-0 bg-black/20" aria-hidden="true" />
+                        <div className="fixed inset-0 z-10 bg-black/20" aria-hidden="true" />
                     </Transition.Child>
 
                     <Transition.Child
@@ -68,7 +68,8 @@ export default function CreateNewFolder(){
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                     >
-                        <Dialog.Panel className='absolute z-10 top-[256.8px] left-[635px] w-80 h-[252px] transform rounded-lg bg-white py-4 text-left align-middle shadow-md transition-all'>
+                        {/* top-[256.8px] left-[635px] */}
+                        <Dialog.Panel className='absolute z-20 top-1/2 left-1/2 w-80 h-[252px] md:top-[256.8px] md:left-[635px] transform rounded-lg bg-white py-4 text-left align-middle shadow-md transition-all'>
                             <div className="flex justify-between px-4 items-center">
                                 <Dialog.Title
                                     as="h3"
