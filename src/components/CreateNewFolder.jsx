@@ -68,8 +68,7 @@ export default function CreateNewFolder({className, textColor}){
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                     >
-                        {/* top-[256.8px] left-[635px] */}
-                        <Dialog.Panel className='absolute z-20 top-1/2 left-1/2 w-80 h-[252px] md:top-[256.8px] md:left-[635px] transform rounded-lg bg-white py-4 text-left align-middle shadow-md transition-all'>
+                        <Dialog.Panel className='absolute z-40 top-1/2 left-1/2 w-80 h-[252px] md:top-[256.8px] md:left-[635px] transform rounded-lg bg-white py-4 text-left align-middle shadow-md'>
                             <div className="flex justify-between px-4 items-center">
                                 <Dialog.Title
                                     as="h3"
