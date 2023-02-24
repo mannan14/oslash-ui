@@ -19,9 +19,11 @@ const {folderValue} = Astro.props
 
 ---
 <Layout title={folders}>
+
 	<LeftPanel folderValue={folderValue} client:load />
 	<!-- <RightPage client:load/>
 	<FolderName client:load/>
 	<PersonalFolder client:load/> -->
 	<MainPage folderValue={folderValue} user={folders} client:load/>
+
 </Layout>

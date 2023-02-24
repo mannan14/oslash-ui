@@ -5,7 +5,7 @@ import avatar2 from '../assets/Avatar-2.png'
 
 const UntitledFolder = () =>  {
     return (
-        <div>
+        <div className="flex flex-col justify-center">
             <div className="flex items-end relative my-4">
                 <img src={avatar} className="absolute left-28  w-12 h-12" alt="" />
                 <img src={avatar2} className="absolute left-36 z-10 w-14 h-14" alt="" />

@@ -12,7 +12,8 @@ function classNames(...classes) {
 export default function IntroRightNavigation({name}){
 
     return (
-        <div className="bg-[#F9FAFB] flex flex-col w-[248px] h-screen space-y-4">
+        // bg-[#F9FAFB] flex flex-col w-[248px] h-screen space-y-4
+        <div className="flex flex-col bg-[#F9FAFB] h-full w-[248px]">
             {
                 (name==='intro') ? 
                 (

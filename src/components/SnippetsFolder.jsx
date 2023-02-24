@@ -40,7 +40,7 @@ const folder_select_snippet = [
 export default function SnippetsFolder(){
     return (
 
-        <div className=" mb-36 ml-5 space-y-2">
+        <div className="pl-10 pb-20 space-y-2">
 
                 <p className="text-[#111827] text-sm font-medium">Select a folder</p>
 
@@ -69,7 +69,7 @@ export default function SnippetsFolder(){
                             {
                                 
                                 <Menu.Items
-                                    className={`-top-10 transform p-2 -translate-y-full relative right-0 w-80 bg-white rounded-lg shadow-md focus:outline-none`}
+                                    className={`-top-2 transform p-2 -translate-y-full absolute z-10 right-0 w-80 bg-white rounded-lg shadow-md focus:outline-none`}
                                 >   
                                     <div className="h-72 overflow-y-scroll overflow-x-hidden px-2">
                                         {

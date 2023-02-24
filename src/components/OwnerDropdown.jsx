@@ -19,7 +19,7 @@ export default function OwnerDropdown({users}){
 
                     }
                     <Menu>
-                        <Menu.Button className="flex justify-center m-2">
+                        <Menu.Button className="flex justify-between items-center m-2">
                             <span className="text-xs text-[#6B7280] font-normal">Owner</span>
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3 text-[#6B7280] m-[2px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -27,7 +27,7 @@ export default function OwnerDropdown({users}){
                                 </svg>
                             </span>
                         </Menu.Button>
-                        <Menu.Items className="absolute top-32 right-4 z-10 w-40 h-30 rounded-lg p-2 bg-white shadow-md focus:outline-none">
+                        <Menu.Items className="absolute top-44 right-4 z-10 w-40 h-30 rounded-lg p-2 bg-white shadow-md focus:outline-none">
                             <div className="flex flex-col">
                                 {
                                     navValues.map((value) => 

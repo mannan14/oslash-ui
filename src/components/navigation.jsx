@@ -5,7 +5,8 @@ import { userInfo } from "../scripts/snippets";
 
 export default function Navigation(){
     return(
-        <header className="relative -z-10">   
+        // relative -z-10
+        <header className="sticky top-0 z-50 h-[48px]">   
             <nav className="flex justify-end items-center pr-4 shadow-[inset_0px_-1px_0px_#E5E7EB] bg-white h-12">
                 <NavIcon userlogo={`/images/${userInfo.username.toLowerCase()}.svg`}/>
             </nav>

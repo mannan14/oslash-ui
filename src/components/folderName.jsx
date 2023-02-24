@@ -5,13 +5,14 @@ import Tippy from "@tippyjs/react";
 
 export default function FolderName({Foldername}){
     return (
-        <div className="bg-[#F9FAFB] flex justify-between">
+
+        <div className="flex h-[92px] justify-between">
             <div className="p-6 flex">
                 {
                     (Foldername === snippet[0].foldername) ? (     
                         <div className="px-4">
-                                <h2 className="font-normal text-xs text-[#374151]">Folder Name</h2>
-                                <h1 className=" text-black font-medium text-lg">{Foldername}</h1>
+                            <h2 className="font-normal text-xs text-[#374151]">Folder Name</h2>
+                            <h1 className=" text-black font-medium text-lg">{Foldername}</h1>
                         </div> 
                     ) 
                     : 

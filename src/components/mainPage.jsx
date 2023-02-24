@@ -2,15 +2,18 @@ import React from "react"
 import RightNavigation from './RightNavigation'
 import FolderName from './FolderName'
 import PersonalFolder from './PersonalFolder'
+import SnippetsFolder from "./SnippetsFolder";
 
 import IntroRightNavigation from "./IntroRightNavigation"
 
 export default function MainPage({folderValue, user}){
     return(
-        <div className="absolute flex flex-row right-0 left-[304px] ">
-            <div className="flex flex-col w-4/5">
+        
+        <>
+            <div className="flex flex-1 flex-col">
                 <FolderName user={user} Foldername={folderValue} />
                 <PersonalFolder user={user} FolderValue={folderValue} />
+                <SnippetsFolder/>
             </div>
             {
                 (user === 'intro') 
@@ -19,7 +22,7 @@ export default function MainPage({folderValue, user}){
                 :
                 <RightNavigation name={user}/>
             }
-        </div>
+        </>
     )
 }
 

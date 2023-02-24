@@ -19,15 +19,19 @@ import LeftNavigation from '../components/LeftNavigation'
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="overflow-hidden">
-		<div class="">
+	<body class="">
+		
+		<div class="flex h-screen">
 			<LeftNavigation  client:load/>
-			<div class="">
+
+			<div class="flex flex-1 flex-col">
 				<Navigation client:load />
-				<div class="">
+
+				<div class="flex flex-1">
 					<slot/>
 				</div>
 			</div>
+			
 		</div>
 	</body>
 </html>
