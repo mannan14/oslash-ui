@@ -13,9 +13,9 @@ export default function IntroInsights(){
     let [categories] = useState(['Today','Week','All Time'])
     
     return (
-        
+            
             <Tab.Group>
-                <Tab.List className="p-[2px] flex space-x-1 rounded-xl bg-[#F9FAFB] my-4 border border-solid">
+                <Tab.List className="p-[2px] flex space-x-1 rounded-xl bg-[#F9FAFB] my-4 border border-solid focus:outline-none">
                     {categories.map((category) => (
                         <Tab
                         key={category}
@@ -33,15 +33,15 @@ export default function IntroInsights(){
                         </Tab>
                     ))}
                 </Tab.List>
-                <Tab.Panels>
-                    <Tab.Panel>
-                        <div className="space-y-2">
-                            <div className="">
-                                <h3 className="uppercase text-[#6B7280] text-xs font-semibold">invocations by app</h3>
+                <Tab.Panels className={`focus:outline-none`}>
+                    <Tab.Panel className={`focus:outline-none`}>
+                        <div className="space-y-2 focus:outline-none">
+                            <div className="focus:outline-none">
+                                <h3 className="uppercase text-[#6B7280] text-xs font-semibold focus:outline-none">invocations by app</h3>
                                 {
                                     apps.map((link) => 
                                     (
-                                        <div key={link.app_name} className="flex items-center p-1">
+                                        <div key={link.app_name} className="flex items-center p-1 focus:outline-none">
                                             <img src={link.href} className=" w-8" alt="" />
                                             <h3 className="overflow-hidden px-2 whitespace-nowrap text-ellipsis text-[#111827] text-sm font-medium">{link.app_name}</h3>
                                             <span className="px-[6px] ml-auto text-sm text-[#111827] font-normal">{link.invocation}</span>
@@ -50,12 +50,12 @@ export default function IntroInsights(){
                                     )
                                 }
                             </div>
-                            <div className="space-y-2">
-                                <h3 className="uppercase text-[#6B7280] text-xs font-semibold">open rates by app</h3>
+                            <div className="space-y-2 focus:outline-none">
+                                <h3 className="uppercase text-[#6B7280] text-xs font-semibold focus:outline-none">open rates by app</h3>
                                 {
                                     apps.map((link) => 
                                     (   
-                                        <div key={link.app_name} className="flex items-center p-1">
+                                        <div key={link.app_name} className="flex items-center p-1 focus:outline-none">
                                             <img src={link.href} className=" w-8" alt="" />
                                             <h3 className="overflow-hidden px-2 whitespace-nowrap text-ellipsis text-[#111827] text-sm font-medium">{link.app_name}</h3>
                                             <div className="ml-auto">

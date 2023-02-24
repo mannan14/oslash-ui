@@ -2,6 +2,7 @@ import React from "react";
 import menu from '../assets/menu.svg'
 import { snippet } from "../scripts/snippets";
 import Tippy from "@tippyjs/react"; 
+import { Menu } from "@headlessui/react";
 
 export default function FolderName({Foldername}){
     return (
@@ -46,17 +47,46 @@ export default function FolderName({Foldername}){
                     </div>
                 }
             </div>
-                <img className="p-6" src={menu} alt="" />
+            <>
+            <Menu>
+                <Menu.Button className={`focus:outline-none`}>
+                    <img className="m-4 p-2 h-9 w-9 rounded-lg hover:bg-gray-100" src={menu} alt="" />
+                </Menu.Button>
+                <Menu.Items className="absolute top-[115px] right-[265px] z-10 rounded-lg p-1 bg-white shadow-md focus:outline-none active:outline-none">
+                    <div className="flex flex-col">
+                        <Menu.Item>
+                                {
+                                    ({active}) => (
+                                        <>
+                                            <button
+                                            className={`${active ? `bg-gray-100 ` :` `} text-[#111827] hover:bg-[#F9FAFB] focus:bg-blue-100 rounded-md text-base text-left p-2 leading-5`}
+                                            href="#"
+                                            >
+                                                
+                                                Edit
+                                            </button>
+                                        </>
+                                    )
+                                }
+                        </Menu.Item>
+                        <Menu.Item>
+                                {
+                                    ({active}) => (
+                                        <>
+                                            <button
+                                            className={`${active ? `bg-gray-100 ` :` `} text-red-500 hover:bg-[#F9FAFB] focus:bg-blue-100 rounded-md text-base text-left p-2 leading-5`}
+                                            href="#"
+                                            >
+                                                Remove
+                                            </button>
+                                        </>
+                                    )
+                                } 
+                        </Menu.Item>
+                    </div>
+                </Menu.Items>
+            </Menu>
+            </>
         </div>
     )
-{/* 
-<Tippy
-    content="Prefix already exist"
-    content=
-    arrow={}
-    className="relative left-4 -top-2 flex flex-row z-50 bg-[#EF4444] text-white rounded-sm text-xs px-2 py-[2px]"
-    placement="bottom"
->                      
-
-</Tippy> */}
 }

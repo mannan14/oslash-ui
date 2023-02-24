@@ -5,8 +5,8 @@ import { userInfo } from "../scripts/snippets";
 export default function IntroVersions(){
     return (
         <>
-            <h3 className="uppercase text-xs font-medium text-[#6B7280] pt-4 px-2">editors</h3>
-            <span className="flex flex-row mx-1 -space-x-2">
+            <h3 className="uppercase text-xs font-medium text-[#6B7280] pt-4 px-2 focus:outline-none">editors</h3>
+            <span className="flex flex-row mx-1 -space-x-2 focus:outline-none">
                 {   
                     editors.slice(0,3).map((user) => (
                         <img key={user.username} src={`/assets/${user.username}.svg`} className={`relative `} alt={user.username} />
@@ -17,7 +17,7 @@ export default function IntroVersions(){
                 </span>
             </span>
 
-            <div className="pt-4 px-2 ">
+            <div className="pt-4 px-2 focus:outline-none">
                 <ul className=" space-y-4 overflow-y-auto h-[500px]">
                     {
                         versionCheck.map((versions) => 

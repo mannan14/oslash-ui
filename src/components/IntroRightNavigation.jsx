@@ -13,13 +13,13 @@ export default function IntroRightNavigation({name}){
 
     return (
         // bg-[#F9FAFB] flex flex-col w-[248px] h-screen space-y-4
-        <div className="flex flex-col bg-[#F9FAFB] h-full w-[248px]">
+        <div className="flex flex-col bg-[#F9FAFB] h-full w-[248px] focus:outline-none">
             {
                 (name==='intro') ? 
                 (
                     
-                    <div className="px-2">
-                        <div className="h-10 w-50 items-center shadow-[inset_0px_-1px_0px_#E5E7EB]">
+                    <div className="px-2 focus:outline-none">
+                        <div className="h-10 w-50 items-center shadow-[inset_0px_-1px_0px_#E5E7EB] focus:outline-none">
                             <Tab.Group>
                                 <Tab.List className='flex justify-around'>
                                     <Tab 
