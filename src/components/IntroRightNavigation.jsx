@@ -12,53 +12,67 @@ function classNames(...classes) {
 export default function IntroRightNavigation({name}){
 
     return (
-        // bg-[#F9FAFB] flex flex-col w-[248px] h-screen space-y-4
-        <div className="flex flex-col bg-[#F9FAFB] h-full w-[248px] focus:outline-none">
+
+        <div className="flex flex-col p-2 bg-[#F9FAFB] h-full w-[248px] focus:outline-none">
             {
                 (name==='intro') ? 
                 (
-                    
-                    <div className="px-2 focus:outline-none">
-                        <div className="h-10 w-50 items-center shadow-[inset_0px_-1px_0px_#E5E7EB] focus:outline-none">
-                            <Tab.Group>
-                                <Tab.List className='flex justify-around'>
-                                    <Tab 
-                                        className={({selected}) => 
-                                        classNames(
-                                            `w-1/2 py-2 m-1 text-sm font-medium ring-white focus:outline-none`,
-                                            selected ? 
-                                            'text-[#111827] shadow-[inset_0px_-1px_0px_#4F46E5]'
-                                            :
-                                            'text-[#6B7280]'
-                                        )}>
-                                        Insights
-                                    </Tab>
-                                    <Tab 
-                                        className={({selected}) => 
-                                        classNames(
-                                            `w-1/2 py-2 m-1  text-sm font-medium  ring-white focus:outline-none`,
-                                            selected ? 
-                                            'text-[#111827] shadow-[inset_0px_-1px_0px_#4F46E5]'
-                                            :
-                                            'text-[#6B7280]'
-                                        )}>
-                                        Versions
-                                    </Tab>
-                                </Tab.List>
-                                <Tab.Panels className=''>
-                                    <Tab.Panel>
-                                        <div className="space-y-2 focus:outline-none">
-                                            <IntroInsights />
-                                        </div>
-                                    </Tab.Panel>
-                                    <Tab.Panel>
-                                        <div className="space-y-2 focus:outline-none">
-                                            <IntroVersions />
-                                        </div>
-                                    </Tab.Panel>
-                                </Tab.Panels>
-                            </Tab.Group>
-                        </div>
+                    <div className="w-full items-center justify-center focus:outline-none">
+                        <Tab.Group>
+                            <Tab.List className='flex justify-around shadow-[inset_0px_-1px_0px_#E5E7EB] focus:outline-none'>
+                                <Tab 
+                                    className={({selected}) => 
+                                    classNames(
+                                        `relative w-full h-9 text-sm font-medium ring-white focus:outline-none`,
+                                        selected ? 
+                                        'text-[#111827] border-b-4 border-b-[#4F46E5]'
+                                        // shadow-[inset_0px_-1px_0px_#4F46E5]
+                                        :
+                                        'text-[#6B7280]'
+                                    )}>
+                                        <h3 className="flex h-10 text-center justify-center">Insights</h3>
+                                    {/* {({selected}) => 
+                                    (
+                                        <span 
+                                            className={`${selected ? 'bg-[#4F46E5] w-full' : ' ' } absolute -z-[1] h-1 focus:outline-none`}
+                                        >
+                                        </span>    
+                                    )
+                                    } */}
+                                </Tab>
+                                <Tab 
+                                    className={({selected}) => 
+                                    classNames(
+                                        `relative w-full h-9 text-sm font-medium  ring-white focus:outline-none`,
+                                        selected ? 
+                                        'text-[#111827] border-b-4 border-b-[#4F46E5]'
+                                        :
+                                        'text-[#6B7280]'
+                                    )}>
+                                        <h3 className="flex h-10 text-center justify-center">Version</h3>
+                                    {/* {({selected}) => 
+                                    (
+                                        <span 
+                                            className={`${selected ? 'bg-[#4F46E5] w-full' : ' ' } absolute -z-[1] h-1 focus:outline-none`}
+                                        >
+                                        </span>    
+                                    )
+                                    } */}
+                                </Tab>
+                            </Tab.List>
+                            <Tab.Panels className=''>
+                                <Tab.Panel>
+                                    <div className="space-y-2 focus:outline-none">
+                                        <IntroInsights />
+                                    </div>
+                                </Tab.Panel>
+                                <Tab.Panel>
+                                    <div className="space-y-2 focus:outline-none">
+                                        <IntroVersions />
+                                    </div>
+                                </Tab.Panel>
+                            </Tab.Panels>
+                        </Tab.Group>
                     </div>
                 )
                 :

@@ -24,12 +24,12 @@ export default function IntroVersions(){
                         (
                             (versions.checked) ? 
                             (
-                                <li className="flex relative z-10"> 
+                                <li key={versions.version_name} className="group flex relative z-10 hover:cursor-pointer"> 
                                     <span className="flex bg-[#4F46E5] items-center justify-center rounded-full w-8 h-8">
                                         <img src="/assets/check.svg" className="" alt="" />
                                     </span>
                                     <div className=" px-4">
-                                        <p className="text-[#111827] font-medium text-xs"> 
+                                        <p className="text-[#111827] font-medium text-xs group-hover:underline"> 
                                             {versions.version_name}
                                         </p>
                                         <span className="text-[#6B7280] text-sm">
@@ -43,11 +43,11 @@ export default function IntroVersions(){
                             (versionCheck[versionCheck.length-1].version_name === versions.version_name) 
                             ?
                             (
-                                <li className="flex relative z-10"> 
+                                <li key={versions.version_name} className="group hover:cursor-pointer flex relative z-10"> 
                                     <span className="bg-white border-2 border-solid border-[#D1D5DB] rounded-full w-8 h-8">
                                     </span>
                                     <div className="flex flex-col px-4">
-                                        <p className="text-[#6B7280] text-xs"> 
+                                        <p className="text-[#6B7280] text-xs group-hover:underline"> 
                                             {versions.version_name}
                                         </p>
                                         <span className="text-[#6B7280] text-sm">
@@ -58,11 +58,11 @@ export default function IntroVersions(){
                             )
                             :
                             (   
-                                <li className="flex relative z-10"> 
+                                <li key={versions.version_name} className="group flex relative z-10 hover:cursor-pointer"> 
                                     <span className="bg-white border-2 border-solid border-[#D1D5DB] rounded-full w-8 h-8">                                
                                     </span>
                                     <div className="flex flex-col px-4">
-                                        <p className="text-[#6B7280] text-xs"> 
+                                        <p className="text-[#6B7280] text-xs group-hover:underline"> 
                                             {versions.version_name}
                                         </p>
                                         <span className="text-[#6B7280] text-sm">
