@@ -9,7 +9,7 @@ export default function PersonalFolder({FolderValue, user}){
         <>
         {/* flex flex-col h-full items-center justify-center */}
             <div className="flex flex-col h-full w-full items-center justify-center">
-                <div className="w-[338px] pb-20">
+                <div className="w-[338px]">
                     {
                     (FolderValue === snippet[0].foldername) ?  
                         ( 
