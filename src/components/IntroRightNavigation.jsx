@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Tab } from "@headlessui/react";
 import IntroInsights from "./IntroInsights";
 import IntroVersions from "./IntroVersions";
@@ -17,50 +17,36 @@ export default function IntroRightNavigation({name}){
             {
                 (name==='intro') ? 
                 (
-                    <div className="w-full items-center justify-center focus:outline-none">
+                    <div className="relative w-full flex flex-col items-center justify-center focus:outline-none">
                         <Tab.Group>
-                            <Tab.List className='flex justify-around shadow-[inset_0px_-1px_0px_#E5E7EB] focus:outline-none'>
-                                <Tab 
-                                    className={({selected}) => 
-                                    classNames(
-                                        `relative w-full h-9 text-sm font-medium ring-white focus:outline-none`,
-                                        selected ? 
-                                        'text-[#111827] border-b-4 border-b-[#4F46E5]'
-                                        // shadow-[inset_0px_-1px_0px_#4F46E5]
-                                        :
-                                        'text-[#6B7280]'
-                                    )}>
-                                        <h3 className="flex h-10 text-center justify-center">Insights</h3>
-                                    {/* {({selected}) => 
+                            <Tab.List className='flex w-full justify-around shadow-[inset_0px_-1px_0px_#E5E7EB] focus:outline-none'>
+                                <Tab as='div' className={`w-full hover:cursor-pointer focus:outline-none`}>
+                                {({selected}) => 
                                     (
-                                        <span 
-                                            className={`${selected ? 'bg-[#4F46E5] w-full' : ' ' } absolute -z-[1] h-1 focus:outline-none`}
+                                        
+                                        <div
+                                            className={`${selected ? 'text-[#111827] ' : 'text-[#6B7280] '} flex items-center justify-center relative w-full h-10 text-sm font-mediumfocus:outline-none`}
                                         >
-                                        </span>    
-                                    )
-                                    } */}
+                                            <h3 className="pb-2 focus:outline-none">Insights</h3>
+                                            <div className={`${selected ? `bg-[#4F46E5] w-full h-1 border-none rounded-t-sm` :``} absolute bottom-0.5 focus:outline-none`}> </div>
+                                        </div>
+                                        
+                                    )}
+
                                 </Tab>
-                                <Tab 
-                                    className={({selected}) => 
-                                    classNames(
-                                        `relative w-full h-9 text-sm font-medium  ring-white focus:outline-none`,
-                                        selected ? 
-                                        'text-[#111827] border-b-4 border-b-[#4F46E5]'
-                                        :
-                                        'text-[#6B7280]'
-                                    )}>
-                                        <h3 className="flex h-10 text-center justify-center">Version</h3>
-                                    {/* {({selected}) => 
-                                    (
-                                        <span 
-                                            className={`${selected ? 'bg-[#4F46E5] w-full' : ' ' } absolute -z-[1] h-1 focus:outline-none`}
+
+                                <Tab as='div' className={`relative w-full hover:cursor-pointer focus:outline-none`}>
+                                    {({selected}) => (
+                                        <div
+                                            className={`${selected ? 'text-[#111827] ' : 'text-[#6B7280] '} flex items-center justify-center relative w-full h-10 text-sm font-medium focus:outline-none`}
                                         >
-                                        </span>    
-                                    )
-                                    } */}
+                                            <h3 className="pb-2 focus:outline-none">Versions</h3>
+                                            <div className={`${selected ? `bg-[#4F46E5] w-full h-1 border-none rounded-t-sm` :``} absolute bottom-0.5 focus:outline-none`}> </div>
+                                        </div>
+                                    )}
                                 </Tab>
                             </Tab.List>
-                            <Tab.Panels className=''>
+                            <Tab.Panels className='w-full'>
                                 <Tab.Panel>
                                     <div className="space-y-2 focus:outline-none">
                                         <IntroInsights />
