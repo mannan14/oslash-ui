@@ -5,7 +5,7 @@ import { snippet } from "../scripts/snippets";
 
 export default function LeftPanelFolders({folderValue}){
     return (
-        <>
+        <> 
             {
                 snippet.map((values)=>(
                     <Disclosure key={values.folders} >
@@ -13,7 +13,7 @@ export default function LeftPanelFolders({folderValue}){
                         <>
                         <div className={`${
                             folderValue === values.foldername ? 'bg-blue-100 ' : ' '
-                            } flex flex-row h-10 px-2 mt-2 w-[232px] items-center rounded-lg hover:cursor-pointer hover:bg-[#DBEAFE]`}>   
+                            } flex flex-row h-10 px-2 w-[232px] items-center rounded-lg hover:cursor-pointer hover:bg-[#DBEAFE]`}>   
                             <Disclosure.Button>
                                 <svg 
                                 className={`${

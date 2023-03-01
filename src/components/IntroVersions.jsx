@@ -18,7 +18,7 @@ export default function IntroVersions(){
             </span>
 
             <div className="pt-4 px-2 focus:outline-none">
-                <ul className=" space-y-4 overflow-y-auto h-[500px]">
+                <ul className=" space-y-4 overflow-y-auto h-full">
                     {
                         versionCheck.map((versions) => 
                         (

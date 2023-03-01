@@ -56,7 +56,7 @@ export default function CreateNewFolder({className, textColor}){
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                     >
-                        <div className="fixed inset-0 z-10 bg-black/20" aria-hidden="true" />
+                        <div className="fixed inset-0 z-40 bg-black/20" aria-hidden="true" />
                     </Transition.Child>
 
                     <Transition.Child
@@ -69,7 +69,7 @@ export default function CreateNewFolder({className, textColor}){
                     leaveTo="opacity-0 scale-95"
                     >
                         {/* top-[256.8px] left-[635px] */}
-                        <Dialog.Panel className='absolute z-20 top-1/2 left-1/2 w-80 h-[252px] -translate-y-36 -translate-x-40 transform rounded-lg bg-white py-4 text-left align-middle shadow-md transition-all'>
+                        <Dialog.Panel className='absolute z-50 top-1/2 left-1/2 w-80 h-[252px] -translate-y-36 -translate-x-40 transform rounded-lg bg-white py-4 text-left align-middle shadow-md transition-all'>
                             <div className="flex justify-between px-4 items-center">
                                 <Dialog.Title
                                     as="h3"

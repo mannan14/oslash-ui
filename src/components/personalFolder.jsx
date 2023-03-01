@@ -2,13 +2,13 @@ import React from "react";
 
 import DefaultFolder from './DefaultFolder'
 import { snippet } from "../scripts/snippets";
+import SnippetsFolder from "./SnippetsFolder";
 
 // name = user
 export default function PersonalFolder({FolderValue, user}){
     return (
         <>
-        {/* flex flex-col h-full items-center justify-center */}
-            <div className="flex flex-col h-full w-full items-center justify-center">
+            <div className="flex flex-col h-full w-full overflow-y-auto items-center justify-center">
                 <div className="w-[338px]">
                     {
                     (FolderValue === snippet[0].foldername) ?  
@@ -27,13 +27,14 @@ export default function PersonalFolder({FolderValue, user}){
                         </div>
                             
                         )
-                    :
-                    (
-                        <DefaultFolder/>
-                    )
+                        :
+                        (
+                            <DefaultFolder/>
+                        )
                     }
                 </div>
             </div>
+            <SnippetsFolder/>
         </>
     )
 }

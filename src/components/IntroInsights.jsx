@@ -13,26 +13,27 @@ export default function IntroInsights(){
     let [categories] = useState(['Today','Week','All Time'])
     
     return (
-            
             <Tab.Group>
-                <Tab.List className="p-[2px] flex space-x-1 rounded-xl bg-[#F9FAFB] my-4 border border-solid focus:outline-none">
-                    {categories.map((category) => (
-                        <Tab
-                        key={category}
-                        className={({ selected }) =>
-                            classNames(
-                            'w-full rounded-lg py-2 text-xs font-medium leading-5',
-                            'ring-white focus:outline-none ',
-                            selected
-                                ? 'text-[#111827] bg-[#DBEAFE]'
-                                : 'text-[#6B7280]'
-                            )
-                        }
-                        >
-                        {category}
-                        </Tab>
-                    ))}
-                </Tab.List>
+                <div className="py-4">
+                    <Tab.List className="p-[2px] flex space-x-1 rounded-xl bg-[#F9FAFB] border border-solid focus:outline-none">
+                        {categories.map((category) => (
+                            <Tab
+                            key={category}
+                            className={({ selected }) =>
+                                classNames(
+                                'w-full rounded-lg py-2 text-xs font-medium leading-5',
+                                'ring-white focus:outline-none ',
+                                selected
+                                    ? 'text-[#111827] bg-[#DBEAFE]'
+                                    : 'text-[#6B7280]'
+                                )
+                            }
+                            >
+                            {category}
+                            </Tab>
+                        ))}
+                    </Tab.List>
+                </div>
                 <Tab.Panels className={`focus:outline-none`}>
                     <Tab.Panel className={`focus:outline-none`}>
                         <div className="space-y-2 focus:outline-none">
@@ -73,6 +74,5 @@ export default function IntroInsights(){
                     </Tab.Panel>
                 </Tab.Panels>
             </Tab.Group>
-        
     )
 }
