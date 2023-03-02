@@ -8,7 +8,7 @@ import ManageAccess from "./ManageAccess";
 export default function IntroRightNavigation({name}){
     return (
 
-        <div className="flex flex-col p-2 overflow-hidden bg-[#F9FAFB] w-[248px] focus:outline-none">
+        <div className="flex flex-col p-2 pb-6 overflow-hidden bg-[#F9FAFB] w-[248px] focus:outline-none">
             {
                 (name==='intro') ? 
                 (

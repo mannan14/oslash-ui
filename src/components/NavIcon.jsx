@@ -15,7 +15,7 @@ export default function NavIcon({userlogo}){
                 <img src={userlogo} className="w-[32px] h-[32px] bg-white hover:cursor-pointer" alt="" />
             </Menu.Button>
             <Menu.Items className="absolute right-4 top-10 z-10 w-[162px] h-32 rounded-lg p-2 bg-white shadow-md focus:outline-none active:outline-none">
-                <div className="flex flex-col">
+                <div className="flex flex-col  space-y-1">
                     {
                         navValues.map((value) => 
                             (
@@ -23,7 +23,7 @@ export default function NavIcon({userlogo}){
                                     {
                                         ({active}) => (
                                             <button
-                                            className={`${active ? `bg-gray-100 ` :` `} text-[#111827] hover:bg-[#F9FAFB] focus:bg-blue-100 rounded text-base text-left p-2 leading-5`}
+                                            className={`${active ? `bg-gray-100 ` :` `} text-[#111827] hover:bg-[#F9FAFB] focus:bg-blue-100 focus:outline-none rounded text-base text-left p-2 leading-5`}
                                             href="#"
                                             >
                                                 {value.label}

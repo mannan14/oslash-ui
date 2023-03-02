@@ -75,9 +75,9 @@ export default function SnippetsFolder(){
                                 leaveTo="transform opacity-0 scale-95"
                               >
                                 <Menu.Items
-                                    className={`-top-2 transform -translate-y-full absolute z-10 right-0 w-80 bg-white rounded-lg shadow-md focus:outline-none`}
+                                    className={`-top-2 transform -translate-y-full absolute pb-2 z-10 right-0 w-80 bg-white rounded-lg shadow-md focus:outline-none`}
                                 >   
-                                    <div className="h-72 overflow-y-scroll overflow-x-hidden">
+                                    <div className="h-72 p-2 overflow-y-scroll overflow-x-hidden">
                                         {
                                             folder_select_snippet.map((val) => (
                                                 

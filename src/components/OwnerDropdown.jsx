@@ -19,7 +19,7 @@ export default function OwnerDropdown({users}){
 
                     }
                     <Menu>
-                        <Menu.Button className="flex justify-between items-center m-2">
+                        <Menu.Button className="flex justify-between items-center m-1">
                             <span className="text-xs text-[#6B7280] font-normal">Owner</span>
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3 text-[#6B7280] m-[2px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -28,7 +28,7 @@ export default function OwnerDropdown({users}){
                             </span>
                         </Menu.Button>
                         <Menu.Items className="absolute top-44 right-4 z-10 w-40 h-30 rounded-lg p-2 bg-white shadow-md focus:outline-none">
-                            <div className="flex flex-col">
+                            <div className="flex flex-col space-y-1 focus:outline-none">
                                 {
                                     navValues.map((value) => 
                                         (
@@ -36,7 +36,7 @@ export default function OwnerDropdown({users}){
                                             {
                                                 ({active}) => (
                                                     <button
-                                                    className={`${active ? `bg-gray-100 ` : ``} text-[#111827] hover:bg-gray-100 active:bg-blue-100 focus:bg-blue-100 rounded text-base text-left p-2 leading-5`}
+                                                    className={`${active ? `bg-gray-100 ` : ``} text-[#111827] hover:bg-gray-100 active:bg-blue-100 focus:bg-blue-100 focus:outline-none rounded text-base text-left p-2 leading-5`}
                                                     href="#"
                                                     >
                                                         {value.label}
