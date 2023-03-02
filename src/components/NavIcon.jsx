@@ -11,11 +11,11 @@ const navValues = [
 export default function NavIcon({userlogo}){
     return (
         <Menu>
-            <Menu.Button>
-                <img src={userlogo} className="w-[32px] h-[32px] bg-white hover:cursor-pointer" alt="" />
+            <Menu.Button className={`focus:outline-none`}>
+                <img src={userlogo} className="w-[32px] h-[32px] bg-white hover:cursor-pointer focus:outline-none" alt="" />
             </Menu.Button>
-            <Menu.Items className="absolute right-4 top-10 z-10 w-[162px] h-32 rounded-lg p-2 bg-white shadow-md focus:outline-none active:outline-none">
-                <div className="flex flex-col  space-y-1">
+            <Menu.Items className="absolute right-4 top-10 z-10 w-[162px] p-2 rounded-lg bg-white shadow-md focus:outline-none active:outline-none">
+                <div className="flex flex-col space-y-1">
                     {
                         navValues.map((value) => 
                             (

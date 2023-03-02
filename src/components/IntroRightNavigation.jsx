@@ -8,11 +8,11 @@ import ManageAccess from "./ManageAccess";
 export default function IntroRightNavigation({name}){
     return (
 
-        <div className="flex flex-col p-2 pb-6 overflow-hidden bg-[#F9FAFB] w-[248px] focus:outline-none">
+        <div className="flex flex-col px-2 py-1 overflow-hidden bg-[#F9FAFB] w-[248px] focus:outline-none">
             {
                 (name==='intro') ? 
                 (
-                    <div className="z-10 w-full flex flex-col items-center justify-center focus:outline-none overflow-hidden">
+                    <div className="z-10 w-full pb-2 space-y-1 flex flex-col items-center justify-center focus:outline-none overflow-hidden">
                         <Tab.Group>
                             <Tab.List className='flex w-full justify-around shadow-[inset_0px_-1px_0px_#E5E7EB] focus:outline-none'>
                                 <Tab as='div' className={`w-full hover:cursor-pointer focus:outline-none`}>

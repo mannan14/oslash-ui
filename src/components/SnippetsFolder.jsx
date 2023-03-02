@@ -129,10 +129,12 @@ export default function SnippetsFolder(){
                                         }
                                     </div> 
                                     <Menu.Item className='h-10'>
-                                        { ({active}) => (
+                                        { ({active}) => 
+                                        (
                                             <CreateNewFolder 
-                                                className={`${active ? `bg-gray-100 ` : ` `}bg-[#F9FAFB] h-10 mt-2 justify-center items-center text-[#6B7280] mx-auto w-[304px] flex rounded-lg active:bg-gray-100`}
-                                                />
+                                                className={`${active ? `bg-gray-100 ` : ` `}bg-[#F9FAFB] h-10 mt-2 justify-center items-center text-[#6B7280] mx-auto w-[304px] flex rounded-lg active:bg-gray-100`}    
+                                                textColor='text-black'
+                                            />
                                         )
                                         }
                                     </Menu.Item>

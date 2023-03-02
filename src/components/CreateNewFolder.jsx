@@ -7,7 +7,8 @@ import Tippy from "@tippyjs/react";
 export default function CreateNewFolder({className, textColor}){
     let [isOpen, setIsOpen] = useState(false)
     let completeButtonRef = useRef(null)
-    
+    let button_click = useRef(null)
+
     let [foldername, setFoldername] = useState('')
     let [shortcutname, setShortcutname] = useState('')
     let [disabled, setDisabled] = useState(true)
@@ -15,6 +16,12 @@ export default function CreateNewFolder({className, textColor}){
     let tooltip_foldername = false
     let tooltip_shortcutname =false
     
+    // button_click.current.addEventListener('keypress', (event) => {
+    //     if(event.key === 'Enter') {
+    //         setIsOpen(true)
+    //     }
+    // })
+
     function closeModal(){
         setIsOpen(false)
     }
@@ -36,7 +43,12 @@ export default function CreateNewFolder({className, textColor}){
     }
     return (
         <>
-            <button onClick={openModal} className={className} >
+            <button onClick={openModal} onKeyDown={(e) => {
+                if(e.key === 'Enter'){
+                    {openModal}
+                } 
+            }} 
+            className={className} >
                 <span className={`${textColor} font-medium px-2`}>+</span>
                 <span className={`${textColor} font-medium text-center`}>Create New</span>
             </button>

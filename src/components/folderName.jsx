@@ -10,17 +10,17 @@ export default function FolderName({Foldername}){
             <div className="flex items-center">
                 {
                     (Foldername === snippet[0].foldername) ? (     
-                        <div className="px-4">
-                            <h2 className="font-normal text-xs text-[#374151] text-ellipsis">Folder Name</h2>
-                            <h1 className=" text-black font-medium text-lg">{Foldername}</h1>
+                        <div className="px-4 w-full">
+                            <h2 className="font-normal text-xs text-[#374151] overflow-hidden text-ellipsis">Folder Name</h2>
+                            <h1 className=" text-black w-40 font-medium text-lg overflow-hidden text-ellipsis">{Foldername}</h1>
                         </div> 
                     ) 
                     : 
                     <div className="flex justify-between">  
-                        <div className="flex flex-col">
+                        <div className="flex flex-col w-full">
                             <span className="flex">
 
-                                <h2 className=" font-normal text-xs text-[#374151]">Folder Shortcut</h2>
+                                <h2 className=" font-normal text-xs overflow-hidden text-ellipsis text-[#374151]">Folder Shortcut</h2>
                                 <Tippy
                                     content="Add common prefix to group snippets eg: o/sal"
                                     className="relative -top-2 z-50 w-48 text-left text-xs text-gray-100 bg-gray-600 rounded-[4px] px-2 py-[2px]"
@@ -38,12 +38,12 @@ export default function FolderName({Foldername}){
                                 </svg>
                                 <h2 className="text-[#6366F1] font-medium text-lg">Add Shortcut</h2>
                             </button> */}
-                            <h1 className="text-black w-28 font-medium text-lg overflow-hidden text-ellipsis"> {Foldername} </h1>
+                            <h1 className="text-black w-28 font-medium text-lg overflow-hidden text-ellipsis"> jsnfwnfjwnfown</h1>
                         </div>
 
-                        <div className="px-12">
+                        <div className="px-12 w-full">
                             <h2 className="font-normal text-xs text-[#374151]">Folder Name</h2>
-                            <h1 className=" text-black w-28 font-medium text-lg overflow-hidden text-ellipsis">{Foldername}</h1>
+                            <h1 className=" text-black w-28 font-medium text-lg overflow-hidden text-ellipsis">{Foldername}nnkejgnjenfonerognero</h1>
                         </div> 
                     </div>
                 }
