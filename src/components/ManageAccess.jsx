@@ -11,7 +11,7 @@ const users = [
 
 export default function ManageAccess({name}){
 return (
-    <div>    
+    <div className="overflow-hidden">    
         {
             (name === snippet[0].folders) ? 
             (   
@@ -25,10 +25,10 @@ return (
             :
             (name != 'intro') ?
             (   
-                <>    
+                <div className="overflow-y-auto">    
                     <OwnerDropdown users={users}/>
                     <DefaultManageAccess users={users} />
-                </>
+                </div>
             )
             :
             (

@@ -13,6 +13,7 @@ export default function IntroInsights(){
     let [categories] = useState(['Today','Week','All Time'])
     
     return (
+        <div className="h-full overflow-y-auto">
             <Tab.Group>
                 <div className="py-4">
                     <Tab.List className="p-[2px] flex space-x-1 rounded-xl bg-[#F9FAFB] border border-solid focus:outline-none">
@@ -74,5 +75,6 @@ export default function IntroInsights(){
                     </Tab.Panel>
                 </Tab.Panels>
             </Tab.Group>
+        </div>
     )
 }

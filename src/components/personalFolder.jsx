@@ -8,7 +8,7 @@ import SnippetsFolder from "./SnippetsFolder";
 export default function PersonalFolder({FolderValue, user}){
     return (
         <>
-            <div className="flex flex-col h-full w-full overflow-y-auto items-center justify-center">
+            <div className="flex h-full w-full overflow-y-auto items-center justify-center">
                 <div className="w-[338px]">
                     {
                     (FolderValue === snippet[0].foldername) ?  
@@ -34,7 +34,7 @@ export default function PersonalFolder({FolderValue, user}){
                     }
                 </div>
             </div>
-            <SnippetsFolder/>
+            {/* <SnippetsFolder/> */}
         </>
     )
 }

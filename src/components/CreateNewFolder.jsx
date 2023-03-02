@@ -96,8 +96,8 @@ export default function CreateNewFolder({className, textColor}){
                                         content={
                                             snippet.map((value) => {
                                                 if(value.folders === shortcutname){
-                                                    tooltip_shortcutname = true 
                                                     return `Prefix already exist`
+                                                    tooltip_shortcutname = true 
                                                 }
                                                 else{
                                                     tooltip_shortcutname = false

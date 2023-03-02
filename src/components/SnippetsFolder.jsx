@@ -40,7 +40,7 @@ const folder_select_snippet = [
 export default function SnippetsFolder(){
     return (
 
-<div className="pl-10 pb-20 space-y-2">
+        <div className="ml-10 mb-20 space-y-2">
                 <p className="text-[#111827] text-sm font-medium">Select a folder</p>
                 <Menu as='div' className='absolute'>
                     {
@@ -77,14 +77,14 @@ export default function SnippetsFolder(){
                                 <Menu.Items
                                     className={`-top-2 transform -translate-y-full absolute z-10 right-0 w-80 bg-white rounded-lg shadow-md focus:outline-none`}
                                 >   
-                                    <div className="h-72 p-2 overflow-y-scroll overflow-x-hidden">
+                                    <div className="h-72 overflow-y-scroll overflow-x-hidden">
                                         {
                                             folder_select_snippet.map((val) => (
                                                 
                                                 <Menu.Item key={val.foldername} >
                                                     { ({active}) => (
 
-                                                        <div className={`${active ? 'bg-blue-100 ' : ' '} space-y-4 hover:bg-gray-100 focus:bg-blue-100 hover:cursor-pointer active:bg-blue-100 rounded-lg`}>
+                                                        <div className={`${active ? 'bg-blue-100 ' : ' '} p-2 space-y-4 hover:bg-gray-100 focus:bg-blue-100 hover:cursor-pointer active:bg-blue-100 rounded-lg`}>
                                                             <div className='p-2 space-y-1.5'>
 
                                                                 <div className='flex items-center'>

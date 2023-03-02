@@ -4,7 +4,7 @@ import { userInfo } from "../scripts/snippets";
 
 export default function IntroVersions(){
     return (
-        <>
+        <div className="space-y-2 h-full overflow-y-auto focus:outline-none">
             <h3 className="uppercase text-xs font-medium text-[#6B7280] pt-4 px-2 focus:outline-none">editors</h3>
             <span className="flex flex-row mx-1 -space-x-2 focus:outline-none">
                 {   
@@ -76,6 +76,6 @@ export default function IntroVersions(){
                     }
                 </ul>
             </div>
-        </>
+        </div>
     )
 }

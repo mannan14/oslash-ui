@@ -4,7 +4,7 @@ import ManageAccess from "./ManageAccess";
 
 export default function RightNavigation({name}){
     return (
-        <div className="flex flex-col h-full w-[248px] space-y-4 p-2">
+        <div className="flex flex-col h-full w-[248px] overflow-hidden space-y-4 p-2">
             <h3 className="uppercase font-medium text-xs text-[#6B7280]">
                 manage access
             </h3>

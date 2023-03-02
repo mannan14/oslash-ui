@@ -5,7 +5,7 @@ import { snippet } from "../scripts/snippets";
 
 export default function LeftPanelFolders({folderValue}){
     return (
-        <> 
+        <div className="scrollbar-hide overflow-y-auto space-y-1"> 
             {
                 snippet.map((values)=>(
                     <Disclosure key={values.folders} >
@@ -41,7 +41,7 @@ export default function LeftPanelFolders({folderValue}){
 
                         <Disclosure.Panel>
                             <button 
-                                className=" w-[232px] h-10 my-1 text-base text-left text-[#111827] rounded-lg hover:bg-[#DBEAFE]">
+                                className=" w-[232px] h-10 text-base text-left text-[#111827] rounded-lg hover:bg-[#DBEAFE]">
                                 {   
                                     values.subfolder.length !== 0 
                                     ?
@@ -63,6 +63,6 @@ export default function LeftPanelFolders({folderValue}){
                 </Disclosure>
                 ))
             }
-        </>
+        </div>
     )
 }

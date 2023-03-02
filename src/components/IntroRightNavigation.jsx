@@ -1,23 +1,18 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Tab } from "@headlessui/react";
 import IntroInsights from "./IntroInsights";
 import IntroVersions from "./IntroVersions";
 
 import ManageAccess from "./ManageAccess";
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
-
 export default function IntroRightNavigation({name}){
-
     return (
 
-        <div className="flex flex-col p-2 bg-[#F9FAFB] h-full w-[248px] focus:outline-none">
+        <div className="flex flex-col p-2 overflow-hidden bg-[#F9FAFB] w-[248px] focus:outline-none">
             {
                 (name==='intro') ? 
                 (
-                    <div className="relative z-10 w-full flex flex-col items-center justify-center focus:outline-none">
+                    <div className="z-10 w-full flex flex-col items-center justify-center focus:outline-none overflow-hidden">
                         <Tab.Group>
                             <Tab.List className='flex w-full justify-around shadow-[inset_0px_-1px_0px_#E5E7EB] focus:outline-none'>
                                 <Tab as='div' className={`w-full hover:cursor-pointer focus:outline-none`}>
@@ -46,16 +41,12 @@ export default function IntroRightNavigation({name}){
                                     )}
                                 </Tab>
                             </Tab.List>
-                            <Tab.Panels className='w-full'>
+                            <Tab.Panels className='w-full h-full overflow-y-auto scrollbar-hide'>
                                 <Tab.Panel>
-                                    <div className="space-y-2 focus:outline-none">
                                         <IntroInsights />
-                                    </div>
                                 </Tab.Panel>
                                 <Tab.Panel>
-                                    <div className="space-y-2 focus:outline-none">
                                         <IntroVersions />
-                                    </div>
                                 </Tab.Panel>
                             </Tab.Panels>
                         </Tab.Group>

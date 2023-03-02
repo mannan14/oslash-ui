@@ -10,7 +10,7 @@ const navValues = [
 export default function OwnerDropdown({users}){
     return (
         <>
-           <div className="flex items-center justify-between p-1">
+           <div className="flex items-center overflow-y-auto justify-between p-1">
                     <div className="flex">
                         <img src='/images/salman.svg' className="" alt="" />
                         <h3 className="flex items-center px-2 overflow-hidden whitespace-nowrap text-ellipsis">{users[0].name}</h3>
