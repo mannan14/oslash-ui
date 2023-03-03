@@ -38,12 +38,12 @@ export default function FolderName({Foldername}){
                                 </svg>
                                 <h2 className="text-[#6366F1] font-medium text-lg">Add Shortcut</h2>
                             </button> */}
-                            <h1 className="text-black w-28 font-medium text-lg overflow-hidden text-ellipsis"> jsnfwnfjwnfown</h1>
+                            <h1 className="text-black w-28 font-medium text-lg overflow-hidden text-ellipsis">{Foldername}</h1>
                         </div>
 
                         <div className="px-12 w-full">
                             <h2 className="font-normal text-xs text-[#374151]">Folder Name</h2>
-                            <h1 className=" text-black w-28 font-medium text-lg overflow-hidden text-ellipsis">{Foldername}nnkejgnjenfonerognero</h1>
+                            <h1 className=" text-black w-28 font-medium text-lg overflow-hidden text-ellipsis">{Foldername}</h1>
                         </div> 
                     </div>
                 }

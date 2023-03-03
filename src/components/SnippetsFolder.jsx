@@ -16,22 +16,22 @@ const folder_select_snippet = [
         users: ['user4','user5','user6','user7','john','joseph','mannan','ashwin'],
     },
     {
-        foldername: 'o/des',
+        foldername: 'o/mine',
         tag:'',
         users: ['user4','user5','user6','user7','john','joseph','mannan','ashwin'],
     },
     {
-        foldername: 'o/des',
+        foldername: 'o/blue',
         tag:'',
         users: ['user4','user5','user6','user7','john','joseph','mannan','ashwin'],
     },
     {
-        foldername: 'o/des',
+        foldername: 'o/red',
         tag:'',
         users: ['user4','user5','user6','user7','john','joseph','mannan','ashwin'],
     },
     {
-        foldername: 'o/des',
+        foldername: 'o/gray',
         tag:'',
         users: ['user4','user5','user6','user7','john','joseph','mannan','ashwin'],
     },
@@ -77,11 +77,11 @@ export default function SnippetsFolder(){
                                 <Menu.Items
                                     className={`-top-2 transform -translate-y-full absolute pb-2 z-10 right-0 w-80 bg-white rounded-lg shadow-md focus:outline-none`}
                                 >   
-                                    <div className="h-72 p-2 overflow-y-scroll overflow-x-hidden">
+                                    <div className="h-72 p-2 space-y-1 overflow-y-scroll overflow-x-hidden">
                                         {
                                             folder_select_snippet.map((val) => (
                                                 
-                                                <Menu.Item key={val.foldername} >
+                                                <Menu.Item key={val.foldername}>
                                                     { ({active}) => (
 
                                                         <div className={`${active ? 'bg-blue-100 ' : ' '} p-2 space-y-4 hover:bg-gray-100 focus:bg-blue-100 hover:cursor-pointer active:bg-blue-100 rounded-lg`}>
@@ -132,8 +132,8 @@ export default function SnippetsFolder(){
                                         { ({active}) => 
                                         (
                                             <CreateNewFolder 
-                                                className={`${active ? `bg-gray-100 ` : ` `}bg-[#F9FAFB] h-10 mt-2 justify-center items-center text-[#6B7280] mx-auto w-[304px] flex rounded-lg active:bg-gray-100`}    
-                                                textColor='text-black'
+                                                classname={`${active ? `bg-gray-100 ` : ` `} bg-[#F9FAFB] h-10 mt-2 justify-center items-center text-[#6B7280] mx-auto w-[304px] flex rounded-lg active:bg-gray-100`}    
+                                                textColor={'text-black'}
                                             />
                                         )
                                         }

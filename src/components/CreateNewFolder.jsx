@@ -4,10 +4,9 @@ import { Dialog, Transition } from "@headlessui/react";
 import { snippet } from '../scripts/snippets'
 import Tippy from "@tippyjs/react"; 
 
-export default function CreateNewFolder({className, textColor}){
+export default function CreateNewFolder({classname, textColor}){
     let [isOpen, setIsOpen] = useState(false)
     let completeButtonRef = useRef(null)
-    let button_click = useRef(null)
 
     let [foldername, setFoldername] = useState('')
     let [shortcutname, setShortcutname] = useState('')
@@ -15,12 +14,6 @@ export default function CreateNewFolder({className, textColor}){
 
     let tooltip_foldername = false
     let tooltip_shortcutname =false
-    
-    // button_click.current.addEventListener('keypress', (event) => {
-    //     if(event.key === 'Enter') {
-    //         setIsOpen(true)
-    //     }
-    // })
 
     function closeModal(){
         setIsOpen(false)
@@ -43,8 +36,16 @@ export default function CreateNewFolder({className, textColor}){
     }
     return (
         <>
-            <button onClick={openModal}  
-            className={className} >
+            <button 
+            onClick={openModal}  
+            className={classname}
+            onKeyDown={ event =>{
+                if(event.key === 'Enter') {
+                          setIsOpen(true)
+                    }
+            } 
+            }
+            >
                 <span className={`${textColor} font-medium px-2`}>+</span>
                 <span className={`${textColor} font-medium text-center`}>Create New</span>
             </button>
@@ -76,7 +77,6 @@ export default function CreateNewFolder({className, textColor}){
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                     >
-                        {/* top-[256.8px] left-[635px] */}
                         <Dialog.Panel className='absolute z-50 top-1/2 left-1/2 w-80 h-[252px] -translate-y-36 -translate-x-40 transform rounded-lg bg-white py-4 text-left align-middle shadow-md transition-all'>
                             <div className="flex justify-between px-4 items-center">
                                 <Dialog.Title
