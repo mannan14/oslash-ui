@@ -5,7 +5,7 @@ import { snippet } from "../scripts/snippets";
 
 export default function LeftPanelFolders({folderValue}){
     return (
-        <div className="scrollbar-hide overflow-y-auto space-y-1"> 
+        <div className="scrollbar-hide mt-1 overflow-y-auto space-y-1"> 
             {
                 snippet.map((values)=>(
                     <Disclosure key={values.folders} >

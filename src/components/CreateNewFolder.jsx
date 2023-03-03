@@ -43,11 +43,7 @@ export default function CreateNewFolder({className, textColor}){
     }
     return (
         <>
-            <button onClick={openModal} onKeyDown={(e) => {
-                if(e.key === 'Enter'){
-                    {openModal}
-                } 
-            }} 
+            <button onClick={openModal}  
             className={className} >
                 <span className={`${textColor} font-medium px-2`}>+</span>
                 <span className={`${textColor} font-medium text-center`}>Create New</span>
