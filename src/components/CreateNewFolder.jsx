@@ -38,15 +38,9 @@ export default function CreateNewFolder({classname, textColor}){
         <>
             <button 
                 onClick={openModal}  
-                className={classname}
-                onKeyDown={ event =>{
-                    if(event.key === 'Enter') {
-                            setIsOpen(true)
-                        }
-                } 
-                }
+                className={classname + `focus:outline-none active:outline-none`}
             >
-                <span className={`${textColor} font-medium px-2`}>+</span>
+                <span className={`${textColor} font-medium p-2`}>+</span>
                 <span className={`${textColor} font-medium text-center`}>Create New</span>
             </button>
             
@@ -100,7 +94,7 @@ export default function CreateNewFolder({classname, textColor}){
                                     <span className="flex rounded-l-lg text-[#6B7280] items-center justify-center w-9 bg-[#F3F4F6]">o/</span>
                                     
                                     <Tippy
-                                        // content="Prefix already exist"
+                                        
                                         content={
                                             snippet.map((value) => {
                                                 if(value.folders === shortcutname){
@@ -128,7 +122,7 @@ export default function CreateNewFolder({classname, textColor}){
                                     </Tippy>
                                 </div>
                                     <Tippy
-                                        // content="Folder name already exist"
+                                    
                                         content={
                                             snippet.map((value) => {
                                                 if(value.foldername === foldername){

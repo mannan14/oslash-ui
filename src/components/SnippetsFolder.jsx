@@ -127,6 +127,7 @@ export default function SnippetsFolder(){
                                                 </Menu.Item>
                                             ))
                                         }
+                                    
                                     </div> 
                                     <Menu.Item className='h-10'>
                                         { ({active}) => 
